@@ -89,33 +89,34 @@ class BurgerBuilder extends Component {
 
   purchaseContinueHandler = () => {
     // alert('You continue!');
-    this.setState({ loading: true });
-    const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice,
-      customer: {
-        name: 'Raman',
-        address: {
-          street: 'Jail Road',
-          city: 'Gurdaspur',
-          zipcode: '143521',
-          country: 'India'
-        },
-        email: 'hi@gmail.com'
-      },
-      deliveryMethod: 'fastest'
-    };
-    axios
-      .post('/orders.json', order)
-      .then(res => {
-        // console.log(res);
-        this.setState({ loading: false, purchasing: false });
-      })
-      .catch(err => {
-        // console.log(err);
-        this.setState({ loading: false, purchasing: false });
-      });
+    // this.setState({ loading: true });
+    // const order = {
+    //   ingredients: this.state.ingredients,
+    //   price: this.state.totalPrice,
+    //   customer: {
+    //     name: 'Raman',
+    //     address: {
+    //       street: 'Jail Road',
+    //       city: 'Gurdaspur',
+    //       zipcode: '143521',
+    //       country: 'India'
+    //     },
+    //     email: 'hi@gmail.com'
+    //   },
+    //   deliveryMethod: 'fastest'
+    // };
+    // axios
+    //   .post('/orders.json', order)
+    //   .then(res => {
+    //     // console.log(res);
+    //     this.setState({ loading: false, purchasing: false });
+    //   })
+    //   .catch(err => {
+    //     // console.log(err);
+    //     this.setState({ loading: false, purchasing: false });
+    //   });
     // .json is added for using it on firebase....
+    this.props.history.push('/checkout');
   };
 
   render() {
